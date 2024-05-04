@@ -8,7 +8,10 @@ WORKDIR /app
 COPY . /app/
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
+# For Jenkinsfile all-in-one location updates
+RUN pip install --no-cache-dir -r python-flask-app/requirements.txt
+
 
 # Enviroment setup - by default flask runs on 5000 port, which is not recommended for production
 ENV FLASK_APP=app.py
