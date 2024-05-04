@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     environment {
         IMG_NAME = "rajeevmagar/all-in-one" // Username and Repo of the Dockerhub.
         IMG_TAG = "v1.0.${BUILD_NUMBER}" // Gives Image Tag Number.
