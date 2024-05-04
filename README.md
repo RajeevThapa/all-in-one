@@ -5,10 +5,10 @@ Welcome to all-in-one repository where you'll find various applications tailored
 ## Applications Included:
 
 ### Static Website
-- Containerize a basic static website built with HTML, CSS, and JavaScript. This could be a simple portfolio site, a landing page, or a personal blog.
+- Containerize a basic static website built with HTML, CSS, and JavaScript. A simple portfolio site, a landing page, a personal blog.
 
 ### Node.js Express App
-- Create a simple web application using Node.js and Express.js framework. This could be a basic API server or a simple web application with server-side rendering.
+- Create a simple web application using Node.js and Express.js framework. A basic API server, a simple web application with server-side rendering.
 
 ### Python Flask App
 - Build a lightweight web application using Python and Flask framework. Flask is well-suited for creating small web applications and APIs.
