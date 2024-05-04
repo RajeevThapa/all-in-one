@@ -25,5 +25,13 @@ pipeline {
                 }
             }
         }
+        stage('Cleaning up the Local Image'){
+            steps {
+                script {
+                    // Remove the Docker Image from Local.
+                    docker.image("${IMG_NAME}:${IMG_TAG}").remove()
+                }
+            }
+        }
     }
 }
