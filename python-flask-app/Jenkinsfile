@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker Image.
-                    customImg = docker.build("${IMG_NAME}:${IMG_TAG}", "--file {DOCKERFILE_PATH} .")
+                    customImg = docker.build("${IMG_NAME}:${IMG_TAG}", "--file ${DOCKERFILE_PATH} .")
                 }
             }
         }
