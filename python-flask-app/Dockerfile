@@ -14,7 +14,9 @@ RUN pip install --no-cache-dir -r python-flask-app/requirements.txt
 
 
 # Enviroment setup - by default flask runs on 5000 port, which is not recommended for production
-ENV FLASK_APP=app.py
+# ENV FLASK_APP=app.py
+# For Jenkinsfile all-in-one location updates
+ENV FLASK_APP=python-flask-app/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=3000
 
