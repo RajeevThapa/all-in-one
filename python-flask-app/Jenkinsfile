@@ -3,7 +3,7 @@ pipeline {
     environment {
         IMG_NAME = "rajeevmagar/all-in-one" // Username and Repo of the Dockerhub.
         IMG_TAG = "v1.0.${BUILD_NUMBER}" // Gives Image Tag Number.
-        DOCKERFILE_PATH = "Dockerfile" // Dockerfile location.
+        DOCKERFILE_PATH = "python-flask-app/Dockerfile" // Dockerfile location.
         DOCKERHUB_CREDENTIALS = "docker-hub-credentials" // Dockerhub Credentials stored in the Jenkins.
     }
     stages {
