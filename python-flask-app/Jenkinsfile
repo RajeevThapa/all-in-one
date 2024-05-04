@@ -27,10 +27,8 @@ pipeline {
         }
         stage('Cleaning up the Local Image'){
             steps {
-                script {
-                    // Remove the Docker Image from Local.
-                    docker.image("${IMG_NAME}:${IMG_TAG}").remove()
-                }
+             // Delete the Local Image.
+                sh "docker rmi ${IMG_NAME}:${IMG_TAG}"
             }
         }
     }
