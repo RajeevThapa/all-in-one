@@ -5,6 +5,7 @@ pipeline {
         IMG_TAG = "v1.0.${BUILD_NUMBER}" // Gives Image Tag Number.
         DOCKERFILE_PATH = "python-flask-app/Dockerfile" // Dockerfile location.
         DOCKERHUB_CREDENTIALS = "docker-hub-credentials" // Dockerhub Credentials stored in the Jenkins.
+        K8S_MANIFEST_PATH = "python-flask-app/k8s/deploy.yaml" // Location of k8s file
     }
     stages {
         stage('Build') {
@@ -29,6 +30,26 @@ pipeline {
             steps {
              // Delete the Local Image.
                 sh "docker rmi ${IMG_NAME}:${IMG_TAG}"
+            }
+        }
+        stage('Update k8s Manifest'){
+            steps {
+                script {
+                    // Update the k8s Manifest.
+                    sh """
+                        cat ${K8S_MANIFEST_PATH}
+                        sed -i 's|image: ${IMG_NAME}:.*\$|image: ${IMG_NAME}:${IMG_TAG}|' ${K8S_MANIFEST_PATH}
+                        cat ${K8S_MANIFEST_PATH}
+                    """
+                    // Commit the changes to the k8s Manifest.
+                    sshagent(credentials:['4b2106fc-c96a-489d-b8a7-9dc887caf143']){
+                        sh """
+                            git add ${K8S_MANIFEST_PATH}
+                            git commit -m "Update image in kubernetes manifest | Jenkins Pipeline"
+                            git push git@github.com:RajeevThapa/all-in-one.git HEAD:main
+                        """
+                    }
+                }
             }
         }
     }
