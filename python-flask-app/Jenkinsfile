@@ -44,7 +44,7 @@ pipeline {
                     // Commit the changes to the k8s Manifest.
                     sshagent(credentials:['4b2106fc-c96a-489d-b8a7-9dc887caf143']){
                         sh """
-                            git add python-flask-app/${K8S_MANIFEST_PATH}
+                            git add ${K8S_MANIFEST_PATH}
                             git commit -m "Update image in kubernetes manifest | Jenkins Pipeline"
                             git push git@github.com:RajeevThapa/all-in-one.git HEAD:main
                         """
