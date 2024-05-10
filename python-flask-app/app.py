@@ -1,9 +1,19 @@
 # app.py
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
+import os
 import requests
 
 app = Flask(__name__)
 
+# Define the directory where the static files are located
+static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+
+# Route to serve static files
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(static_dir, filename)
+
+# Function to fetch weather data from OpenWeatherMap API
 def get_weather(city):
     api_key = "d76f4f83eb54b081fe88fbf54a9061df"
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
@@ -19,6 +29,7 @@ def get_weather(city):
     else:
         return None
 
+# Route for the homepage
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
