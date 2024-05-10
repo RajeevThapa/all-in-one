@@ -24,6 +24,9 @@ This is a simple web application built using Flask that allows users to check th
 - **Jenkins**: Jenkins is an open-source automation server that helps automate various parts of the software development process, including building, testing, and deployment.
 - **ArgoCD**: ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It helps in managing application deployments to Kubernetes clusters.
 
+## Overview
+![image](https://github.com/RajeevThapa/all-in-one/assets/101322664/f3985c8e-935c-4ba7-b46c-2d977ab4136c)
+
 ## Running the Application
 
 To run the application locally:
@@ -35,6 +38,8 @@ To run the application locally:
 ```
 python3 app.py
 ```
+![Screenshot from 2024-05-10 23-08-59](https://github.com/RajeevThapa/all-in-one/assets/101322664/c2dbd9fb-c7d7-4f18-b3e7-ed66569482b9)
+![Screenshot from 2024-05-10 23-09-13](https://github.com/RajeevThapa/all-in-one/assets/101322664/5c03fe6e-5e50-493d-9579-4516c462c775)
 
 4. Access the application from: http://127.0.0.1:5000
 5. If you want to Build the Docker image (Make sure comment the lines: 13 and 19 and uncomment lines: 11 and 18 = As the dockerfile for now is made for jenkins and due to location of directory issue while automating):
@@ -75,6 +80,8 @@ This repository includes a Jenkinsfile that defines a pipeline for automating th
 5. **Run the Pipeline**: Trigger the pipeline job in Jenkins. Jenkins will execute the pipeline stages, including building the Docker image, pushing it to Dockerhub, updating the Kubernetes manifest, and committing the changes to your GitHub repository.
 
 6. **Verify Deployment**: Once the pipeline completes successfully, verify that the Docker image has been pushed to Dockerhub and the Kubernetes manifest has been updated in your GitHub repository.
+![Screenshot from 2024-05-10 23-06-31](https://github.com/RajeevThapa/all-in-one/assets/101322664/2a53552d-d5c7-4022-b1a7-ea9d0637bf63)
+
 
 ## Using ArgoCD
 
@@ -120,3 +127,9 @@ To manage deployments with ArgoCD:
     Use the username `admin` and the decoded password to log in to the ArgoCD URL. 
 
 Username is `admin` by default for ArgoCD.
+![Screenshot from 2024-05-10 23-07-30](https://github.com/RajeevThapa/all-in-one/assets/101322664/4e723f8b-3bcf-4de5-8326-e6ad90c9dcba)
+
+## Deployment in minikube
+![Screenshot from 2024-05-10 23-07-45](https://github.com/RajeevThapa/all-in-one/assets/101322664/70d0e162-492c-4edd-9a9a-8388939144eb)
+
+
