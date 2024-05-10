@@ -31,19 +31,25 @@ To run the application locally:
 1. Make sure you have Docker installed on your system.
 2. Clone this repository.
 3. Navigate to the root directory of the project.
-4. Build the Docker image:
+
+```
+python3 app.py
+```
+
+4. Access the application from: http://127.0.0.1:5000
+5. If you want to Build the Docker image (Make sure comment the lines: 13 and 19 and uncomment lines: 11 and 18 = As the dockerfile for now is made for jenkins and due to location of directory issue while automating):
 
 ```
 docker build -t weather-app .
 ```
 
-5. Run a container based on the built image:
+6. Run a container based on the built image:
 
 ```
 docker run -p 3000:3000 weather-app
 ```
 
-6. Access the application in your web browser at http://localhost:3000.
+7. Access the application in your web browser at http://localhost:3000.
 
 
 ## Jenkins Pipeline
