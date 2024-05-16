@@ -31,10 +31,9 @@ This is a simple web application built using Flask that allows users to check th
 
 To run the application locally:
 
-1. Make sure you have Docker installed on your system.
-2. Clone this repository.
-3. Navigate to the root directory of the project.
-
+1. Clone this repository.
+2. Navigate to the root directory of the project.
+3. Bash the following command in the terminal
 ```
 python3 app.py
 ```
