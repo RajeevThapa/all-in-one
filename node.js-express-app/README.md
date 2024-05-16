@@ -12,6 +12,7 @@ This is a simple web application using Node.js and Express.js framework. The app
 - **Node.js:** A JavaScript runtime built on Chrome's V8 JavaScript engine.
 - **Express.js:** A minimal and flexible Node.js web application framework.
 - **EJS:** A simple templating language that lets you generate HTML markup with plain JavaScript.
+- **Docker**: The application is containerized using Docker, making it easy to deploy and run in different environments.
 
 ## Overview
 ![image](https://github.com/RajeevThapa/all-in-one/assets/101322664/8baebd2e-5acf-4dd1-8f61-1e3eead42d35)
@@ -30,3 +31,17 @@ node app.js
 ![Screenshot from 2024-05-16 18-53-52](https://github.com/RajeevThapa/all-in-one/assets/101322664/4ccca11d-4c75-4047-be5b-1ee6f80b760e)
 
 4. Access the application from: http://127.0.0.1:3000
+5. If you want to Build the Docker image:
+
+```
+docker build -t node-app .
+```
+
+6. Run a container based on the built image:
+
+```
+docker run -p 3000:3000 node-app
+```
+
+7. Access the application in your web browser at http://localhost:3000.
+
