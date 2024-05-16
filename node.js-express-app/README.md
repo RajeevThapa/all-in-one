@@ -14,7 +14,7 @@ This is a simple web application using Node.js and Express.js framework. The app
 - **EJS:** A simple templating language that lets you generate HTML markup with plain JavaScript.
 
 ## Overview
-
+![image](https://github.com/RajeevThapa/all-in-one/assets/101322664/8baebd2e-5acf-4dd1-8f61-1e3eead42d35)
 
 ## Running the Application
 
@@ -26,6 +26,7 @@ To run the application locally:
 ```
 node app.js
 ```
-
+![Screenshot from 2024-05-16 18-54-05](https://github.com/RajeevThapa/all-in-one/assets/101322664/e0c3f508-9952-4b26-a1a8-a3e43ce50c90)
+![Screenshot from 2024-05-16 18-53-52](https://github.com/RajeevThapa/all-in-one/assets/101322664/4ccca11d-4c75-4047-be5b-1ee6f80b760e)
 
 4. Access the application from: http://127.0.0.1:3000
