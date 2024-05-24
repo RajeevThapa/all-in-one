@@ -11,7 +11,18 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    // Building Image.
                     customImg = docker.build("${IMG_NAME}:${IMG_TAG}", "--file ${DOCKERFILE_PATH} .")
+                }
+            }
+        }
+        stage('Push') {
+            steps {
+                script {
+                    // Pushing Image to Dockerhub.
+                    docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
+                        customImg.push()
+                    }
                 }
             }
         }
