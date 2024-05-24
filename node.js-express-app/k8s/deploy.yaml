@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node.js-express-app
+  labels:
+    app: node.js-express-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node.js-express-app
+  template:
+    metadata:
+      labels:
+        app: node.js-express-app
+    spec:
+      containers:
+      - name: node.js-express-app
+        image: rajeevmagar/all-in-one:v1.0.3
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node.js-express-app
+spec:
+  selector:
+    app.kubernetes.io/name: node.js-express-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
+  type: LoadBalancer
