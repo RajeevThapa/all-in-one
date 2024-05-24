@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: python-flask-app
-        image: rajeevmagar/all-in-one:v1.0.3
+        image: rajeevmagar/all-in-one:v1.0.4
         ports:
         - containerPort: 80
 
