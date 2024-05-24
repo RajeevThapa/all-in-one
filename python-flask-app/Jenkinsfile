@@ -5,7 +5,7 @@ pipeline {
         IMG_TAG = "v1.0.${BUILD_NUMBER}" // Gives Image Tag Number.
         DOCKERFILE_PATH = "python-flask-app/Dockerfile" // Dockerfile location.
         DOCKERHUB_CREDENTIALS = "docker-hub-credentials" // Dockerhub Credentials stored in the Jenkins.
-        K8S_MANIFEST_PATH = "python-flask-app/k8s/deploy.yaml" // Location of k8s file
+        K8S_MANIFEST_PATH = "python-flask-app/k8s/deploy.yaml" // Location of k8s file.
     }
     stages {
         stage('Build') {

@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    environment {
+        IMG_NAME = "rajeevmagar/all-in-one" // Username and Repo of Dockerhub.
+        IMG_TAG = "v1.0.${BUILD_NUMBER}" // Gives the Tag number.
+        DOCKERFILE_PATH = "node.js-express-app/Dockerfile" // Location of the Dockerfile.
+        DOCKERHUB_CREDENTIALS = "docker-hub-credentials" // Dockerhub credentials stored in Jenkins.
+        K8S_MANIFEST_PATH = "node.js-express-app/k8s/deploy.yaml" // Location of the k8s file.
+    }
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    customImg = docker.build("${IMG_NAME}:${IMG_TAG}", "--file ${DOCKERFILE_PATH} .")
+                }
+            }
+        }
+    }
+}
