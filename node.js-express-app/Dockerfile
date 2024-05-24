@@ -13,7 +13,9 @@ COPY node.js-express-app/package*.json ./
 RUN npm install
 
 # Copy the rest of the application code
-COPY . /app/
+# COPY . /app/
+# For Jenkinsfile all-in-one location updates
+COPY node.js-express-app/ .
 
 # Expose Port
 EXPOSE 3000 
