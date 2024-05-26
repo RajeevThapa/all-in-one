@@ -1,3 +1,9 @@
+# Ignore files and directories from the parent directory
+../CODE_OF_CONDUCT.md
+../LICENSE
+../node.js-express-app/
+../README.md
+
 # Ignore Python cache and compiled files
 __pycache__/
 *.pyc
@@ -11,14 +17,12 @@ env/
 # Ignore log files
 *.log
 
+# Ignore Kubernetes configuration files if they are not needed in the container
+k8s/
+
 # Ignore documentation and CI/CD files if not needed in the container
 README.md
 Jenkinsfile
-CODE_OF_CONDUCT.md
-LICENSE
-
-# Ignore Kubernetes configuration files if they are not needed in the container
-k8s/
 
 # Ensure the Dockerfile and .dockerignore are included in the build context
 !.dockerignore
