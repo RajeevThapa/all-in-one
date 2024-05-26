@@ -1,4 +1,25 @@
-Dockerfile
-.dockerignore
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment directories
+venv/
+env/
+
+# Ignore log files
+*.log
+
+# Ignore documentation and CI/CD files if not needed in the container
 README.md
 Jenkinsfile
+CODE_OF_CONDUCT.md
+LICENSE
+
+# Ignore Kubernetes configuration files if they are not needed in the container
+k8s/
+
+# Ensure the Dockerfile and .dockerignore are included in the build context
+!.dockerignore
+!Dockerfile
